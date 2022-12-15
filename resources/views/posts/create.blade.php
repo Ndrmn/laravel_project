@@ -25,16 +25,17 @@ Add post
     <form class="add-form" action="{{route('posts.store')}}" method="post" enctype="multipart/form-data">
         @csrf
 
-        <p>Title:</p>
-        <input class="form_laravel" type="text" name="name" id="name" placeholder="">
-        <p>Text:</p>
-        <textarea class="form_laravel" type="textarea" name="full_text" id="full_text" placeholder=""></textarea>
-        <p>Picture:</p>
-        <input type="file" name="image" id="image" accept="image/*">
-        <button class="btnSubm" type="submit">Save</button>
-        
+        <h5>Title:</h5>
+        <input class="form_laravel form-control mb-3" type="text" name="name" id="name" placeholder="">
+        <h5>Text:</h5>
+        <textarea class="form_laravel form-control mb-3" type="textarea" name="full_text" id="full_text" placeholder=""></textarea>
+        <h5>Picture:</h5>
+        <img src="" class="rounded mb-3 new-image" style="width: 120px" id="result" alt="">
+        <input type="file" name="image" id="image" class="form_laravel form-control mb-5 uploadImage" accept="image/*">
+        <button class="btn btn-success" type="submit">Save</button>
+
     </form>
-    
+
 </div>
 
 @endsection

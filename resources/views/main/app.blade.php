@@ -4,8 +4,8 @@
 		<title>@yield('title-block')</title>
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-		
-        <link rel="stylesheet" href="../app.css" />
+
+        <link rel="stylesheet" href="{{asset('app.css')}}" />
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0">
 		<!-- Rubik font -->
@@ -17,8 +17,9 @@
     @include('main.header')
     @yield('content')
     @include('main.footer')
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-		<script type="text/javascript" src="js/slick.min.js"></script>
-		<script src="js/script.js"></script>
+        <script type="text/javascript" src="{{asset('https://code.jquery.com/jquery-3.6.1.min.js')}}"></script>
+		<script type="text/javascript" src="{{asset('js/slick.min.js')}}"></script>
+		<script src="{{asset('js/script.js')}}"></script>
 </body>
 </html>
+

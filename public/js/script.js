@@ -1,5 +1,4 @@
 //Network request
-
 let requestOptions = {
   method: 'GET',
   redirect: 'follow'
@@ -8,7 +7,7 @@ let requestOptions = {
 async function loadInfo () {
   let response = await fetch('https://testimonialapi.toolcarton.com/api', requestOptions);
   let json = await response.json();
-  console.log(json);
+  // console.log(json);
 
   for (let i = 0; i<10; i++) {
 
@@ -30,7 +29,7 @@ async function loadInfo () {
     let img = document.createElement('img');
     img.className = 'img';
     img.src = json[i].avatar;
-    
+
     let text = document.createElement('div');
     text.className = 'customer__text';
 
@@ -81,7 +80,7 @@ async function loadInfo () {
     drop.innerText = `"${json[i].message}"`;
 
 
-    
+
 
     rating.append(rate);
     rating.append(star);
@@ -99,7 +98,7 @@ async function loadInfo () {
     comentWrapper.append(comentSmall);
 
     if (comentSmall.innerText != coment.innerText) {
-      comentWrapper.append(more);      
+      comentWrapper.append(more);
     }
 
     comentWrapper.append(drop);
@@ -187,7 +186,7 @@ menuButton.addEventListener('click', function(e) {
 });
 
 document.addEventListener('click', function (e) {
-  
+
   const target = e.target;
   const thsmenu = target == menuList || menuList.contains(target);
   const thssign = target == sign || sign.contains(target);
@@ -197,4 +196,46 @@ document.addEventListener('click', function (e) {
     toggleClass();
   };
 
+});
+
+
+//Add image preview
+
+FReader = new FileReader();
+
+// событие, когда файл загрузится
+FReader.onload = function(e) {
+    document.querySelector("#result").src = e.target.result;
+};
+
+// выполнение функции при выборки файла
+try {
+    document.querySelector(".uploadImage").addEventListener("change", loadImageFile);
+} catch(e) {
+};
+
+// функция выборки файла
+function loadImageFile() {
+    let file = document.querySelector(".uploadImage").files[0];
+    FReader.readAsDataURL(file);
+    let imageToHide = document.querySelector('.old-image');
+    imageToHide.classList.add('hiddenElem');
+};
+
+
+//Dashboard toggle
+
+const postsButton = document.querySelector('.posts');
+const usersButton = document.querySelector('.users');
+const postsTable = document.querySelector('.postsTable');
+const usersTable = document.querySelector('.usersTable');
+
+postsButton.addEventListener('click', function () {
+    usersTable.classList.add('hiddenElem');
+    postsTable.classList.remove('hiddenElem');
+});
+
+usersButton.addEventListener('click', function () {
+    usersTable.classList.remove('hiddenElem');
+    postsTable.classList.add('hiddenElem');
 });

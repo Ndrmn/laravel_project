@@ -4,7 +4,7 @@
                         <div class="footer__info">
                             <a href="" class="footer__logo">
                                 <div class="footer__pic">
-                                    <img class="img" src="../img/logo.svg" alt="">	
+                                    <img class="img" src="{{asset('/img/logo.svg')}}" alt="">
                                 </div>
                                 <span class="footer__name">Lasles<b>VPN</b></span>
                             </a>
@@ -14,17 +14,17 @@
                             <div class="footer__socialNetworks">
                                 <a href="">
                                     <div class="footer__socialIcons">
-                                        <img class="img" src="../img/facebook.png" alt="">
+                                        <img class="img" src="{{asset('/img/facebook.png')}}" alt="">
                                     </div>
                                 </a>
                                 <a href="">
                                     <div class="footer__socialIcons">
-                                        <img class="img" src="../img/twitter.png" alt="">
+                                        <img class="img" src="{{asset('/img/twitter.png')}}" alt="">
                                     </div>
                                 </a>
                                 <a href="">
                                     <div class="footer__socialIcons">
-                                        <img class="img" src="../img/instagram.png" alt="">
+                                        <img class="img" src="{{asset('/img/instagram.png')}}" alt="">
                                     </div>
                                 </a>
                             </div>
@@ -41,7 +41,7 @@
                                 <li class="footer__button"><a href="">Locations</a></li>
                                 <li class="footer__button"><a href="">Server</a></li>
                                 <li class="footer__button"><a href="">Countries</a></li>
-                                <li class="footer__button"><a href="">Blog</a></li>				
+                                <li class="footer__button"><a href="">Blog</a></li>
                             </ul>
 
                             <ul class="footer__column">
