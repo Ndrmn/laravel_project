@@ -11,10 +11,4 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    server: {
-        host: '172.19.0.4',
-        hmr: {
-            host: 'localhost'
-        }
-    },
 });
